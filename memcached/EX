@@ -1,0 +1,2 @@
+cd /home/sudarsun/scripts/memcached
+~/start.sh && sudo ./start_server.sh

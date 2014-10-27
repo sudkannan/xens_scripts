@@ -1,0 +1,2 @@
+cd /home/sudarsun/scripts/graphchi
+~/start.sh && sudo ./start_server.sh

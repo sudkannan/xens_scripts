@@ -1,0 +1,46 @@
+going to start client script with kill time 100.....
+ssh: connect to host 10.0.0.12 port 22: No route to host
+ssh: connect to host 10.0.0.12 port 22: No route to host
+stats_time = 1
+Configuration:
+
+nProcessors on system: 4
+nWorkers: 4
+runtime: -1
+Get fraction: 0.900000
+Naggle's algorithm: False
+
+
+host: 10.0.0.12
+address: 10.0.0.12
+host: 10.0.0.12
+address: 10.0.0.12
+Loading key value file...Average Size = 1057.34758
+Keys to Preload = 444669
+created uniform distribution 1000
+rps -1 cpus 4
+Overridge n_connections_total because < n_workers
+num_worker_connections 1
+Connection error
+finished warmup...
+going to kill apps and memcache 100
+starting workload...
+Starting killer 
+stats_time = 1
+Configuration:
+
+nProcessors on system: 4
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: 10.0.0.12
+address: 10.0.0.12
+host: 10.0.0.12
+address: 10.0.0.12
+Loading key value file...created uniform distribution 1000
+rps -1 cpus 4
+num_worker_connections 50
+Connection error

@@ -1,0 +1,167 @@
+bash: line 4: cd: /root/apps/memcached/memcached_client/scripts: No such file or directory
+rm -rf *.o
+rm -rf *.so
+gcc -fpic -c mmaplib.c
+gcc -fpic -shared -o libmmap.so mmaplib.o
+gcc -fpic -c migration.c -lpthread -lrt -D_DONTSTOPMIGRATION
+migration.c: In function ‘clear_migrated_pages’:
+migration.c:193:4: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 4 has type ‘size_t’ [-Wformat]
+migration.c:193:4: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 5 has type ‘size_t’ [-Wformat]
+gcc -fpic -shared -o libmigration.so migration.o -lpthread -lrt
+sudo cp *.so /usr/local/lib
+sudo cp *.so /usr/lib
+sudo cp *.h /usr/local/include
+sudo cp *.h /usr/include
+sudo cp *.h /usr/lib/
+going to mmap write 
+exiting 
+starting thread
+Set returned by pthread_getaffinity_np() contained:
+    CPU 3
+calling migrate_pages 
+Please enter value for command-line argument [filetype]
+  (Options are: edgelist, adjlist, binedgelist, metis)
+INFO:     conversions.hpp(convert_if_notexists:767): Did not find preprocessed shards for xaa
+[0mINFO:     conversions.hpp(convert_if_notexists:768): (Edge-value size: 4)
+[0mINFO:     conversions.hpp(convert_if_notexists:769): Will try create them now...
+[0mINFO:     sharder.hpp(start_preprocessing:428): Starting preprocessing, shovel size: 30583466
+[0mxxmalloc size 30583466, total: 0 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 1414433435 2880533863
+INFO:     conversions.hpp(convert_edgelist:221): Reading in edge list format!
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    conversions.hpp(convert_edgelist:226): Read 10000000 lines, 137.832 MB
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 22 
+sleeping 2 2 0
+calling migrate_pages 
+TOTAL MIGRATED PAGES 22 
+sleeping 2 2 0
+[1;33mDEBUG:    conversions.hpp(convert_edgelist:226): Read 20000000 lines, 279.998 MB
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 24 
+sleeping 2 2 0
+[1;33mDEBUG:    conversions.hpp(convert_edgelist:226): Read 30000000 lines, 417.311 MB
+[0mxxmalloc size 30583466, total: 0 
+INFO:     sharder.hpp(flush:249): Sorting shovel: xaa4.0.shovel, max:10723955
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 24 
+sleeping 2 2 0
+INFO:     sharder.hpp(flush:249): Sorting shovel: xaa4.1.shovel, max:10880891
+[0mINFO:     sharder.hpp(flush:251): Sort done.xaa4.1.shovel
+[0mcalling myfree 
+INFO:     sharder.hpp(flush_shovel:459): Waiting shoveling threads...
+[0mINFO:     sharder.hpp(flush:251): Sort done.xaa4.0.shovel
+[0mcalling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 24 
+sleeping 2 2 0
+INFO:     sharder.hpp(determine_number_of_shards:622): Determining number of shards automatically.
+[0mINFO:     sharder.hpp(determine_number_of_shards:625): Assuming available memory is 1400 megabytes. 
+[0mINFO:     sharder.hpp(determine_number_of_shards:626):  (This can be defined with configuration parameter 'membudget_mb')
+[0mINFO:     sharder.hpp(determine_number_of_shards:631): Determining maximum shard size: 175 MB.
+[0mINFO:     sharder.hpp(determine_number_of_shards:644): Number of shards to be created: 2
+[0mxxmalloc size 10880892, total: 0 
+xxmalloc size 25895772, total: 0 
+INFO:     sharder.hpp(write_shards:1025): Edges per shard: 17263848 nshards=2 total: 34527695
+[0mINFO:     sharder.hpp(write_shards:1031): Buffer size in merge phase: 367001604
+[0mcalling xxmalloc 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 25 
+sleeping 2 2 0
+INFO:     sharder.hpp(finish_shard:683): Starting final processing for shard: 0
+[0m[1;33mDEBUG:    sharder.hpp(finish_shard:694): Shovel size:207167196 edges: 17263933
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 25 
+sleeping 2 2 0
+calling xxmalloc 
+calling xxmalloc 
+[1;33mDEBUG:    sharder.hpp(finish_shard:760): 0 / 17263933
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 25 
+sleeping 2 2 0
+[1;33mDEBUG:    sharder.hpp(finish_shard:760): 10000000 / 17263933
+[0mcalling myfree 
+calling myfree 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 25 
+sleeping 2 2 0
+INFO:     sharder.hpp(createnextshard:945): Remaining edges: 17263762 remaining shards:1 edges per shard=17263848
+[0mINFO:     sharder.hpp(createnextshard:948): Edges per shard: 17263762
+[0mcalling myfree 
+calling myfree 
+INFO:     sharder.hpp(finish_shard:683): Starting final processing for shard: 1
+[0m[1;33mDEBUG:    sharder.hpp(finish_shard:694): Shovel size:207165144 edges: 17263762
+[0mcalling migrate_pages 
+calling xxmalloc 
+calling xxmalloc 
+[1;33mDEBUG:    sharder.hpp(finish_shard:760): 0 / 17263762
+[0mTOTAL MIGRATED PAGES 27 
+sleeping 2 2 0
+[1;33mDEBUG:    sharder.hpp(finish_shard:760): 10000000 / 17263762
+[0mcalling myfree 
+calling myfree 
+calling myfree 
+calling xxmalloc 
+INFO:     sharder.hpp(createnextshard:945): Remaining edges: 0 remaining shards:0 edges per shard=17263762
+[0mINFO:     sharder.hpp(createnextshard:948): Edges per shard: 17263762
+[0mcalling myfree 
+calling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 27 
+sleeping 2 2 0
+
+ === REPORT FOR sharder() ===
+[Timings]
+edata_flush:		3.5221s	 (count: 132, min: 0.000995s, max: 1.35067, avg: 0.0266826s)
+execute_sharding:		12.8949 s
+finish_shard.sort:		2.02052s	 (count: 2, min: 0.941528s, max: 1.07899, avg: 1.01026s)
+preprocessing:		11.0553 s
+shard_final:		7.47561s	 (count: 2, min: 2.70595s, max: 4.76966, avg: 3.7378s)
+[Other]
+app:	sharder
+INFO:     sharder.hpp(done:961): Created 2 shards, for 34527695 edgesSuccessfully finished sharding for xaa
+[0mINFO:     conversions.hpp(convert:651): Created 2 shards.
+[0mcalling myfree 
+[1;33mDEBUG:    stripedio.hpp(stripedio:271): Start io-manager with 1 threads.
+[0mINFO:     graphchi_engine.hpp(graphchi_engine:154): Initializing graphchi_engine. This engine expects 4-byte edge data. 
+[0mINFO:     chifilenames.hpp(load_vertex_intervals:400): shard: 0 - 2130680
+[0mINFO:     chifilenames.hpp(load_vertex_intervals:400): shard: 2130681 - 10880891
+[0mINFO:     pagerank.cpp(main:182): Running Pagerank by holding vertices in-memory mode!
+[0mINFO:     graphchi_engine.hpp(run:737): GraphChi starting
+[0mINFO:     graphchi_engine.hpp(run:738): Licensed under the Apache License 2.0
+[0mINFO:     graphchi_engine.hpp(run:739): Copyright Aapo Kyrola et al., Carnegie Mellon University (2012)
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 27 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(print_config:132): Engine configuration: 
+[0mINFO:     graphchi_engine.hpp(print_config:133):  exec_threads = 4
+[0mINFO:     graphchi_engine.hpp(print_config:134):  load_threads = 2
+[0mINFO:     graphchi_engine.hpp(print_config:135):  membudget_mb = 1400
+[0mINFO:     graphchi_engine.hpp(print_config:136):  blocksize = 1048576
+[0mINFO:     graphchi_engine.hpp(print_config:137):  scheduler = 0
+[0mINFO:     graphchi_engine.hpp(run:773): Start iteration: 0
+[0mINFO:     graphchi_engine.hpp(run:852): 1.99638s: Starting: 0 -- 2130680
+[0mcalling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 0/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 28 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 3.63799s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 0/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+Killed by signal 2.

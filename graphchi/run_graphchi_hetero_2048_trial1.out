@@ -1,0 +1,482 @@
+bash: line 4: cd: /root/apps/memcached/memcached_client/scripts: No such file or directory
+rm -rf *.o
+rm -rf *.so
+gcc -fpic -c mmaplib.c
+gcc -fpic -shared -o libmmap.so mmaplib.o
+gcc -fpic -c migration.c -lpthread -lrt -D_DONTSTOPMIGRATION
+migration.c: In function ‘clear_migrated_pages’:
+migration.c:193:4: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 4 has type ‘size_t’ [-Wformat]
+migration.c:193:4: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 5 has type ‘size_t’ [-Wformat]
+gcc -fpic -shared -o libmigration.so migration.o -lpthread -lrt
+sudo cp *.so /usr/local/lib
+sudo cp *.so /usr/lib
+sudo cp *.h /usr/local/include
+sudo cp *.h /usr/include
+sudo cp *.h /usr/lib/
+going to mmap write 
+exiting 
+starting thread
+Set returned by pthread_getaffinity_np() contained:
+    CPU 3
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 1414425061 2880542237
+Please enter value for command-line argument [filetype]
+  (Options are: edgelist, adjlist, binedgelist, metis)
+INFO:     conversions.hpp(convert_if_notexists:767): Did not find preprocessed shards for xaa
+[0mINFO:     conversions.hpp(convert_if_notexists:768): (Edge-value size: 4)
+[0mINFO:     conversions.hpp(convert_if_notexists:769): Will try create them now...
+[0mINFO:     sharder.hpp(start_preprocessing:428): Starting preprocessing, shovel size: 30583466
+[0mxxmalloc size 30583466, total: 0 
+INFO:     conversions.hpp(convert_edgelist:221): Reading in edge list format!
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    conversions.hpp(convert_edgelist:226): Read 10000000 lines, 137.832 MB
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    conversions.hpp(convert_edgelist:226): Read 20000000 lines, 279.998 MB
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    conversions.hpp(convert_edgelist:226): Read 30000000 lines, 417.311 MB
+[0mxxmalloc size 30583466, total: 0 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     sharder.hpp(flush:249): Sorting shovel: xaa4.0.shovel, max:10723955
+[0mINFO:     sharder.hpp(flush:249): Sorting shovel: xaa4.1.shovel, max:10880891
+[0mINFO:     sharder.hpp(flush:251): Sort done.xaa4.1.shovel
+[0mcalling myfree 
+INFO:     sharder.hpp(flush_shovel:459): Waiting shoveling threads...
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     sharder.hpp(flush:251): Sort done.xaa4.0.shovel
+[0mcalling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     sharder.hpp(determine_number_of_shards:622): Determining number of shards automatically.
+[0mINFO:     sharder.hpp(determine_number_of_shards:625): Assuming available memory is 1400 megabytes. 
+[0mINFO:     sharder.hpp(determine_number_of_shards:626):  (This can be defined with configuration parameter 'membudget_mb')
+[0mINFO:     sharder.hpp(determine_number_of_shards:631): Determining maximum shard size: 175 MB.
+[0mINFO:     sharder.hpp(determine_number_of_shards:644): Number of shards to be created: 2
+[0mxxmalloc size 10880892, total: 0 
+xxmalloc size 25895772, total: 0 
+INFO:     sharder.hpp(write_shards:1025): Edges per shard: 17263848 nshards=2 total: 34527695
+[0mINFO:     sharder.hpp(write_shards:1031): Buffer size in merge phase: 367001604
+[0mcalling xxmalloc 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     sharder.hpp(finish_shard:683): Starting final processing for shard: 0
+[0m[1;33mDEBUG:    sharder.hpp(finish_shard:694): Shovel size:207167196 edges: 17263933
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+calling xxmalloc 
+calling xxmalloc 
+[1;33mDEBUG:    sharder.hpp(finish_shard:760): 0 / 17263933
+[0m[1;33mDEBUG:    sharder.hpp(finish_shard:760): 10000000 / 17263933
+[0mcalling myfree 
+calling myfree 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     sharder.hpp(createnextshard:945): Remaining edges: 17263762 remaining shards:1 edges per shard=17263848
+[0mINFO:     sharder.hpp(createnextshard:948): Edges per shard: 17263762
+[0mcalling myfree 
+calling myfree 
+INFO:     sharder.hpp(finish_shard:683): Starting final processing for shard: 1
+[0m[1;33mDEBUG:    sharder.hpp(finish_shard:694): Shovel size:207165144 edges: 17263762
+[0mcalling xxmalloc 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    sharder.hpp(finish_shard:760): 0 / 17263762
+[0m[1;33mDEBUG:    sharder.hpp(finish_shard:760): 10000000 / 17263762
+[0mcalling myfree 
+calling myfree 
+calling myfree 
+calling xxmalloc 
+INFO:     sharder.hpp(createnextshard:945): Remaining edges: 0 remaining shards:0 edges per shard=17263762
+[0mINFO:     sharder.hpp(createnextshard:948): Edges per shard: 17263762
+[0mcalling myfree 
+calling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+
+ === REPORT FOR sharder() ===
+[Timings]
+edata_flush:		1.64561s	 (count: 132, min: 0.001008s, max: 1.01873, avg: 0.0124668s)
+execute_sharding:		10.9298 s
+finish_shard.sort:		2.03395s	 (count: 2, min: 0.946266s, max: 1.08769, avg: 1.01698s)
+preprocessing:		11.501 s
+shard_final:		5.39125s	 (count: 2, min: 2.31757s, max: 3.07368, avg: 2.69563s)
+[Other]
+app:	sharder
+INFO:     sharder.hpp(done:961): Created 2 shards, for 34527695 edgesSuccessfully finished sharding for xaa
+[0mINFO:     conversions.hpp(convert:651): Created 2 shards.
+[0mcalling myfree 
+[1;33mDEBUG:    stripedio.hpp(stripedio:271): Start io-manager with 1 threads.
+[0mINFO:     graphchi_engine.hpp(graphchi_engine:154): Initializing graphchi_engine. This engine expects 4-byte edge data. 
+[0mINFO:     chifilenames.hpp(load_vertex_intervals:400): shard: 0 - 2130680
+[0mINFO:     chifilenames.hpp(load_vertex_intervals:400): shard: 2130681 - 10880891
+[0mINFO:     pagerank.cpp(main:182): Running Pagerank by holding vertices in-memory mode!
+[0mINFO:     graphchi_engine.hpp(run:737): GraphChi starting
+[0mINFO:     graphchi_engine.hpp(run:738): Licensed under the Apache License 2.0
+[0mINFO:     graphchi_engine.hpp(run:739): Copyright Aapo Kyrola et al., Carnegie Mellon University (2012)
+[0mINFO:     graphchi_engine.hpp(print_config:132): Engine configuration: 
+[0mINFO:     graphchi_engine.hpp(print_config:133):  exec_threads = 4
+[0mINFO:     graphchi_engine.hpp(print_config:134):  load_threads = 2
+[0mINFO:     graphchi_engine.hpp(print_config:135):  membudget_mb = 1400
+[0mINFO:     graphchi_engine.hpp(print_config:136):  blocksize = 1048576
+[0mINFO:     graphchi_engine.hpp(print_config:137):  scheduler = 0
+[0mINFO:     graphchi_engine.hpp(run:773): Start iteration: 0
+[0mINFO:     graphchi_engine.hpp(run:852): 0.098522s: Starting: 0 -- 2130680
+[0mcalling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 0/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 1.76951s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 0/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 1
+[0mINFO:     graphchi_engine.hpp(run:852): 4.66724s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 1/7, subinterval: 0 - 2130680
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 6.40183s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 1/7, subinterval: 2130681 - 10880891
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 2
+[0mINFO:     graphchi_engine.hpp(run:852): 9.27261s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 2/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 11.0117s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 2/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 3
+[0mINFO:     graphchi_engine.hpp(run:852): 13.8986s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 3/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 15.6423s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 3/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 4
+[0mINFO:     graphchi_engine.hpp(run:852): 18.615s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 4/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 20.3331s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 4/7, subinterval: 2130681 - 10880891
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 5
+[0mINFO:     graphchi_engine.hpp(run:852): 23.1903s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 5/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:852): 24.9257s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 5/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mcalling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 6
+[0mINFO:     graphchi_engine.hpp(run:852): 27.8434s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 6/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 29.5527s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 6/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:773): Start iteration: 7
+[0mINFO:     graphchi_engine.hpp(run:852): 32.4929s: Starting: 0 -- 2130680
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 7/7, subinterval: 0 - 2130680
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 2130681 vertices, sizeof:64 total:136363584
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+INFO:     graphchi_engine.hpp(run:852): 34.1608s: Starting: 2130681 -- 10880891
+[0mcalling myfree 
+calling xxmalloc 
+INFO:     graphchi_engine.hpp(run:865): Iteration 7/7, subinterval: 2130681 - 10880891
+[0m[1;33mDEBUG:    graphchi_engine.hpp(run:880): Allocation 8750211 vertices, sizeof:64 total:560013504
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+INFO:     graphchi_engine.hpp(run:889): Start updates
+[0mINFO:     graphchi_engine.hpp(run:899): Finished updates
+[0mcalling myfree 
+calling myfree 
+calling migrate_pages 
+TOTAL MIGRATED PAGES 0 
+sleeping 2 2 0
+[1;33mDEBUG:    stripedio.hpp(stripedio:271): Start io-manager with 1 threads.
+[0mcalling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+calling xxmalloc 
+calling myfree 
+Print top 20 vertices:
+1. 8762941	220.203
+2. 1229299	156.88
+3. 8762942	58.0256
+4. 16482	57.8674
+5. 8762946	57.6327
+6. 38253	53.6943
+7. 1931522	48.5415
+8. 12852	48.3812
+9. 187028	46.179
+10. 1783305	46.0983
+11. 102907	45.3298
+12. 2541	45.2357
+13. 2778492	45.225
+14. 4166455	44.1791
+15. 7831973	41.5557
+16. 17892	41.0804
+17. 696620	40.1083
+18. 645019	39.8996
+19. 688136	39.4635
+20. 69324	39.1958
+
+ === REPORT FOR pagerank() ===
+[Numeric]
+cachesize_mb:		0
+compression:		0
+execthreads:		4
+loadthreads:		2
+membudget_mb:		1400
+niothreads:		1
+niters:		8
+nshards:		2
+nvertices:		1.08809e+07
+scheduler:		0
+serialized-updates:		2.09876e+07	(count: 16, min: 1.28119e+06, max: 1.34226e+06, avg: 1.31173e+06)
+stripesize:		1.07374e+09
+updates:		8.70471e+07
+work:		2.76222e+08
+[Timings]
+execute-updates:		5.01035s	 (count: 16, min: 0.080017s, max: 0.624505, avg: 0.313147s)
+iomgr_init:		0.000131 s
+memoryshard_create_edges:		18.247s	 (count: 16, min: 1.08235s, max: 1.19347, avg: 1.14044s)
+preada_now:		1.66383s	 (count: 112, min: 0.001827s, max: 0.051998, avg: 0.0148557s)
+pwritea_now:		0.037546s	 (count: 2, min: 0.006912s, max: 0.030634, avg: 0.018773s)
+runtime:		37.0447 s
+stripedio_wait_for_reads:		4.4e-05s	 (count: 16, min: 1e-06s, max: 6e-06, avg: 2.75e-06s)
+stripedio_wait_for_writes:		0.000108s	 (count: 25, min: 1e-06s, max: 8e-06, avg: 4.32e-06s)
+[Other]
+app:	pagerank
+engine:	default
+file:	xaa
+calling myfree 
+	Command being timed: "/root/graphchi/graphchi-cpp/bin/example_apps/pagerank file xaa niters 8"
+	User time (seconds): 72.10
+	System time (seconds): 17.42
+	Percent of CPU this job got: 141%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4627696
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 12
+	Minor (reclaiming a frame) page faults: 3413338
+	Voluntary context switches: 1459
+	Involuntary context switches: 610
+	Swaps: 0
+	File system inputs: 1053496
+	File system outputs: 1605304
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
